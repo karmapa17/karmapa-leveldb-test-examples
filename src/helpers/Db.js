@@ -29,4 +29,12 @@ export default class Db {
       });
     });
   }
+
+  close() {
+    return new Promise((resolve, reject) => {
+      this.db.close((err) => {
+        err ? reject(err) : resolve();
+      });
+    });
+  }
 }
